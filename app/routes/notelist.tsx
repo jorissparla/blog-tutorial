@@ -28,6 +28,12 @@ export default function NotesListPage() {
           alt=""
         />
       </div>
+      <h4
+        className="m-2 font-semibold text-orange-800
+      "
+      >
+        De meeste actuele - 'Bleeding Edge' - bevindingen!!{" "}
+      </h4>
       <hr className="my-4" />
       {data.noteListItems.length === 0 ? (
         <p className="p-4">No notes yet</p>

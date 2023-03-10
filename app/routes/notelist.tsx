@@ -21,6 +21,13 @@ export default function NotesListPage() {
       <h2 className="m-9 text-4xl font-bold text-sky-600">
         Imperium Sports Blog
       </h2>
+      <div>
+        <img
+          className="h-64 w-64 rounded shadow-lg"
+          src="https://user-images.githubusercontent.com/16277487/224350345-97377ff6-e55e-4f17-8eda-a23ca2da6253.png"
+          alt=""
+        />
+      </div>
       <hr className="my-4" />
       {data.noteListItems.length === 0 ? (
         <p className="p-4">No notes yet</p>

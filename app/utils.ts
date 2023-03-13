@@ -1,7 +1,6 @@
+import type { User } from "~/models/user.server";
 import { useMatches } from "@remix-run/react";
 import { useMemo } from "react";
-
-import type { User } from "~/models/user.server";
 
 const DEFAULT_REDIRECT = "/";
 
@@ -49,7 +48,9 @@ function isUser(user: any): user is User {
 }
 
 export function useOptionalUser(): User | undefined {
+  console.log("useOptionalUser");
   const data = useMatchesData("root");
+  console.log("useOptionalUser", data);
   if (!data || !isUser(data.user)) {
     return undefined;
   }

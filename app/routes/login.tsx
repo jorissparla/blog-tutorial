@@ -10,6 +10,7 @@ import { verifyLogin } from "~/models/user.server";
 
 export async function loader({ request }: LoaderArgs) {
   const userId = await getUserId(request);
+  console.log({ userId }})
   if (userId) return redirect("/");
   return json({});
 }

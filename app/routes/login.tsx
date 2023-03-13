@@ -71,7 +71,6 @@ export default function LoginPage() {
   const actionData = useActionData<typeof action>();
   const emailRef = React.useRef<HTMLInputElement>(null);
   const passwordRef = React.useRef<HTMLInputElement>(null);
-  console.log(process.env.DATABASE_URL);
   React.useEffect(() => {
     if (actionData?.errors?.email) {
       emailRef.current?.focus();

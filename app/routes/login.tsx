@@ -1,11 +1,12 @@
-import type { ActionArgs, LoaderArgs, MetaFunction } from "@remix-run/node";
-import { json, redirect } from "@remix-run/node";
-import { Form, Link, useActionData, useSearchParams } from "@remix-run/react";
 import * as React from "react";
 
+import type { ActionArgs, LoaderArgs, MetaFunction } from "@remix-run/node";
+import { Form, Link, useActionData, useSearchParams } from "@remix-run/react";
 import { createUserSession, getUserId } from "~/session.server";
-import { verifyLogin } from "~/models/user.server";
+import { json, redirect } from "@remix-run/node";
 import { safeRedirect, validateEmail } from "~/utils";
+
+import { verifyLogin } from "~/models/user.server";
 
 export async function loader({ request }: LoaderArgs) {
   const userId = await getUserId(request);
@@ -70,7 +71,7 @@ export default function LoginPage() {
   const actionData = useActionData<typeof action>();
   const emailRef = React.useRef<HTMLInputElement>(null);
   const passwordRef = React.useRef<HTMLInputElement>(null);
-
+  console.log(process.env.DATABASE_URL);
   React.useEffect(() => {
     if (actionData?.errors?.email) {
       emailRef.current?.focus();
